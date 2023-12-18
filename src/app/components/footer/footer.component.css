@@ -1,0 +1,28 @@
+.footer-container {
+  background-color: #222222;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+
+h6{
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.footer-copy {
+  margin-left: 30px;
+}
+
+
+.footer-text {
+
+  margin-right: 50px;
+}
+
+

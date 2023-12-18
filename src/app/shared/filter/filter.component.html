@@ -1,0 +1,36 @@
+<!-- Container Filter -->
+<div class="filter-container">
+  <div
+    *ngIf="isFilters === true"
+    class="filter-filters"
+  >
+    <select name="selectByRate"[(ngModel)]="selectedRate" (ngModelChange)="handleRate()" >
+      <option [value]="0">☆☆☆☆☆</option>
+      <option [value]="1">★☆☆☆☆</option>
+      <option [value]="2">★★☆☆☆</option>
+      <option [value]="3">★★★☆☆</option>
+      <option [value]="4">★★★★☆</option>
+    </select>
+
+    <div class="filter-order">
+      <button
+        *ngFor="let item of orders"
+        class="btn btn-sm btn-primary"
+        (click)="handleSort(item.order)"
+      >
+        {{item.label}}
+      </button>
+
+    </div>
+
+  </div>
+  <button
+    (click)="toggleFilters()"
+    class="filter-toggle btn btn-sm btn-info"
+  >
+    {{isFilters === false ? showLabel : hideLabel}}
+  </button>
+</div>
+<!-- End Container Filter -->
+
+

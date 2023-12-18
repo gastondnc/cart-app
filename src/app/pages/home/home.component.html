@@ -1,0 +1,24 @@
+<div class="container my-5">
+  <h4 class="text-center text-white my-4">{{ title }}</h4>
+
+  <filter-bar
+    [selected-rate]="selectedRate"
+    (on-rate)="handleRateFilter($event)"
+    (on-sort)="handleSortFilter($event)"
+  >
+</filter-bar>
+
+
+  <div class="d-flex justify-content-center text-center flex-wrap">
+    <div class="col-3 p-1" *ngFor="let product of products">
+      <product-card
+        [product]="product"
+        [is-fav]="checkIsFav(product.id)"
+        [show-delete-button]="checkDeleteButton(product.id)"
+        (on-add-cart)="addCart($event)"
+        (on-delete-cart)="deleteCart($event)"
+        (on-is-fav)="setIsFav($event, product)"
+      ></product-card>
+    </div>
+  </div>
+</div>

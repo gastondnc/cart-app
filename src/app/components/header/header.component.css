@@ -1,0 +1,12 @@
+.header-icons{
+  display: flex;
+  align-items: center;
+}
+
+.cart-item {
+  cursor: pointer;
+}
+
+.fav-item{
+  cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.filter-container{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.filter-filters {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 30px;
+
+
+}
+
+.filter-order {
+  display: flex;
+  gap: 10px;
+
+}
+
+
+.filter-toggle {
+
+}

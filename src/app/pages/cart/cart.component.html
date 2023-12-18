@@ -1,0 +1,44 @@
+<div class="container-fluid my-5 cart">
+  <h4 class="text-decoration-underline text-white">{{ title }}</h4>
+  <hr />
+  <div *ngIf="products.length > 0" class="product-list">
+    <div *ngFor="let product of products">
+      <div class="product-item">
+        <div>
+          <img [src]="product.image" alt="image" />
+        </div>
+        <div class="product-detail">
+          <div>
+            <p class="product-title">{{ product.title }}</p>
+            <p class="product-category">{{ product.category }}</p>
+            <div class="product-buttons">
+              <button
+                (click)="deleteProductCart(product.id)"
+                class="btn btn-sm btn-danger"
+              >
+                delete
+              </button>
+              <div class="mx-2">
+                <button class="btn btn-warning btn-sm mx-1" [disabled]="product.quantity! < 2" (click)="deleteQuantity(product)">-</button>
+                <span>{{product.quantity}}</span>
+                <button class="btn btn-warning btn-sm mx-1" [disabled]="product.quantity! >= product.stock" (click)="addQuantity(product)">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="product-price">{{ product.totalPrice | currency : "EUR" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="total-price">
+      <p>Total: {{ totalPrice | currency : "EUR" }}</p>
+    </div>
+    <hr />
+  </div>
+  <div class="text-center" *ngIf="products.length === 0">
+    <h6 class="text-white">...ups! No hay productos en el carrito</h6>
+    <h1 class="text-white">8===D</h1>
+  </div>
+</div>

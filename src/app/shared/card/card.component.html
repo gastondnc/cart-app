@@ -1,0 +1,40 @@
+<!-- Card -->
+<div class="col" *ngIf="product !== undefined">
+  <!-- Container Card -->
+  <div class="card border-dark shadow-sm bg-light">
+    <img [src]="product.image" class="img-thumbnail border-0 mt-2" />
+    <!-- Div Body -->
+    <div class="card-body">
+      <h6 class="card-title text-break">
+        {{ product.title }}
+      </h6>
+      <p class="card-text">Lorem ipsum dolor sit amet.</p>
+    </div>
+    <!-- End Div Body -->
+    <!-- Div Card Buttoms -->
+    <div class="card-buttons">
+      <button
+        class="btn btn-success btn-md mx-1"
+        (click)="addCart(product)"
+        *ngIf="!showDeleteButton"
+      >
+        <i class="fa-solid fa-cart-plus"></i>
+      </button>
+
+      <button
+        class="btn btn-warning btn-md mx-1"
+        *ngIf="showDeleteButton"
+        (click)="deleteCart(product.id)"
+      >
+        <i class="fa-solid fa-trash"></i>
+      </button>
+
+      <button class="btn btn-danger btn-md mx-1" (click)="handleFav()">
+        <i class="fa-heart" [ngClass]="isFav ? 'fa-solid' : 'fa-regular'"> </i>
+      </button>
+    </div>
+    <!-- End Div Card Buttom -->
+  </div>
+  <!-- End Conteiner Card -->
+</div>
+<!-- End Card -->
